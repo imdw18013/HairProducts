@@ -78,7 +78,7 @@ namespace HairProducts.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<ProductCategory>> PostProductCategory(ProductCategory productCategory)
+        public async Task<ActionResult<ProductCategory>> PostProductCategory([FromForm] ProductCategory productCategory)
         {
             _context.ProductCategory.Add(productCategory);
             await _context.SaveChangesAsync();
