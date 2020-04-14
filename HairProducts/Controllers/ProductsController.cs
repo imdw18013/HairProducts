@@ -57,7 +57,7 @@ namespace HairProducts.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,ProductName,ProductDescription,Image,ProductPrice,ProductCategoryId,Upload")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductId,ProductName,ProductDescription,ProductPrice,ProductCategoryId,Upload")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace HairProducts.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("ProductId,ProductName,ProductDescription,Image,ProductPrice,ProductCategoryId,Upload")] Product product)
+        public async Task<IActionResult> Edit(long id, [Bind("ProductId,ProductName,ProductDescription,ProductPrice,ProductCategoryId,Upload")] Product product)
         {
             if (id != product.ProductId)
             {

@@ -24,7 +24,6 @@ namespace HairProducts.Models
         [Display(Name = "Product Price")]
         [NotMapped]
         public IFormFile Upload { get; set; }
-        [Required]
         public byte[] Image { get; set; }
         [Required]
         public decimal ProductPrice { get; set; }
