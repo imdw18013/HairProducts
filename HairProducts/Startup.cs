@@ -34,6 +34,12 @@ namespace HairProducts
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAuthentication()
+              .AddGoogle(options =>
+              {
+                  options.ClientId = "841250003701-r17t8b9jg3j6plcr10norpt05bvubjvi.apps.googleusercontent.com";
+                  options.ClientSecret = "7CcetcYWt0tyIaAi6dqc5LjG";
+              });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
