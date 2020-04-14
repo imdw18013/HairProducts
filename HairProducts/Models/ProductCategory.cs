@@ -15,7 +15,6 @@ namespace HairProducts.Models
         [MinLength(1, ErrorMessage = "Category name cannot be empty")]
         [Display(Name = "Category Name")]
         public string CategoryName { get; set; }
-        [Required]
         [Display(Name = "Category Description")]
         public string CategoryDescription { get; set; }
         public virtual ICollection<Product> Products { get; set; }
