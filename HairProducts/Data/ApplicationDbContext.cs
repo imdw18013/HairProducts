@@ -12,5 +12,7 @@ namespace HairProducts.Data
             : base(options)
         {
         }
+        public DbSet<HairProducts.Models.ProductCategory> ProductCategory { get; set; }
+        public DbSet<HairProducts.Models.Product> Product { get; set; }
     }
 }
