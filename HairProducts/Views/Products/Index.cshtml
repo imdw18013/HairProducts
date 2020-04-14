@@ -1,0 +1,34 @@
+﻿@model IEnumerable<HairProducts.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-action="Create">Create New</a>
+    }
+</p>
+@foreach (var product in Model)
+{
+    <div style="float: left; width: 300px; max-width: 100%; margin: 1em;">
+        <div>
+            <img style="height: 300px;" src="data:image/jpeg;base64,@Convert.ToBase64String(product.Image)"/>
+        </div>
+        <h2 style="text-align: center;">@product.ProductName</h2>
+        <h2 style="text-align: center">$@product.ProductPrice</h2>
+        <p style="height: 100px;">@product.ProductDescription</p>
+@if (User.Identity.IsAuthenticated)
+{
+    <div>
+        <a asp-action="Edit" asp-route-id="@product.ProductId">Edit</a> |
+        <a asp-action="Details" asp-route-id="@product.ProductId">Details</a> |
+        <a asp-action="Delete" asp-route-id="@product.ProductId">Delete</a>
+    </div>
+}
+    </div>
+}
+
